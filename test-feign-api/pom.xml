@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.ledger</groupId>
+        <artifactId>springcloud_test</artifactId>
+        <version>spring-cloud</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+    <artifactId>test-feign-api</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <properties>
+        <java.version>11</java.version>
+    </properties>
+    <dependencies>
+        <!--common工具包-->
+        <dependency>
+            <groupId>com.ledger</groupId>
+            <artifactId>test-common</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+        <!--数据库包-->
+        <dependency>
+            <groupId>com.ledger</groupId>
+            <artifactId>test-datasource</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+        <!--openfeign依赖 Feign的注解定义接口，调用这个接口，就可以调用服务注册中心的服务-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
+        </dependency>
+        <!--openFeign使用时需要搭配loadbalancer负载均衡-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-loadbalancer</artifactId>
+        </dependency>
+        <!--hystrix依赖 spring-cloud-starter-hystrix已经被废弃了-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
+            <version>2.2.6.RELEASE</version>
+        </dependency>
+        <!-- 负载均衡ribbon -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-ribbon</artifactId>
+        </dependency>
+        <!--feign的连接池-->
+        <dependency>
+            <groupId>io.github.openfeign</groupId>
+            <artifactId>feign-httpclient</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

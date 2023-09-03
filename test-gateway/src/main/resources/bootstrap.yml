@@ -1,0 +1,25 @@
+server:
+  port: 11000
+
+spring:
+  application:
+    # 服务名称
+    name: test-gateway
+  profiles:
+    # 环境
+    active: dev
+  cloud:
+    nacos:
+      # nacos地址
+      server-addr: 106.54.9.19:8848
+      discovery:
+        # 集群位置
+        cluster-name: NB
+        # 命名空间
+        namespace: 85e7bf18-84c9-42e9-a5f6-46de7fec3215
+      config:
+        # 文件后缀
+        file-extension: yaml
+        # nacos命名空间(得看你配置文件里面有没有设置命名空间)
+        namespace: 85e7bf18-84c9-42e9-a5f6-46de7fec3215
+
